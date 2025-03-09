@@ -45,7 +45,8 @@ struct Matrix:
           print("Error: Matrix dimensions of `content` must match")
         else:
           # Parse each row of `content` and store it in `self`
-          self.rows = rows.size
+          # self.rows = rows.size
+          self.rows = len(rows)
           self.cols = this_count + 1
           self.total_items = self.rows * self.cols
           self.data = DataType.alloc(self.total_items)
