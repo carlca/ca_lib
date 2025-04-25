@@ -71,8 +71,8 @@ struct TeeTest:
       var res = self._run_test(self.tests[i])
 
       var loc = self._res_to_str(res)
-      var file_name: String; var line: Int; var col: Int; var success: String
-      file_name, line, col, success = self.unpack_loc(loc)
+      var file_name: String; var line: Int; var success: String
+      file_name, line, _, success = self.unpack_loc(loc)
       with open(file_name, "r") as f:
         var s = f.read()
         var code_lines = s.split("\n")

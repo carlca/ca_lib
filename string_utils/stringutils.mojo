@@ -92,9 +92,8 @@ struct su:
   fn remove_char(s: String, char: String) -> String:
     var result = String()
     if char.__len__() == 1:
-      var c: String = ""
       for i in range(len(s)):
-        c = s[i]
+        var c = s[i]
         if c != char:
           result += c
     return result
@@ -123,4 +122,3 @@ struct su:
     for _ in range(length):
       result += char
     return result
-

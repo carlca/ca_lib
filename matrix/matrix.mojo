@@ -35,12 +35,11 @@ struct Matrix:
     s = su.trim(s, "[", "]")
     s = su.trim(s, "'", "'")
     var rows = su.split(s, "],[")
-    var this_count = 0
     var last_count = 0
     # Check if all rows in `content` have the same number of columns
     try:
       for row in rows:
-        this_count = su.count_char(row[], ",")
+        var this_count = su.count_char(row[], ",")
         if this_count != last_count and last_count != 0:
           print("Error: Matrix dimensions of `content` must match")
         else:
