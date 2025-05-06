@@ -6,19 +6,19 @@ from builtin._location import __source_location
 alias TestFn = fn() raises -> Tuple[Bool, String]
 
 @value
-struct Passed(CollectionElement, Stringable):
+struct Passed(Stringable):
   var name: String
   fn __str__(self) -> String:
     return "\"" + self.name + "\": passed!"
 
 @value
-struct Failed(CollectionElement, Stringable):
+struct Failed(Stringable):
   var name: String
   fn __str__(self) -> String:
     return "\"" + self.name + "\": failed!"
 
 @value
-struct Raised(CollectionElement, Stringable):
+struct Raised(Stringable):
   var message: String
   fn __str__(self) -> String:
     var message = self.message
