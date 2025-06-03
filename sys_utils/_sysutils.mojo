@@ -28,7 +28,7 @@ struct sysutils:
       var slash = String("/")
       var result = String("")
       for part in parts_trimmed:
-        result += part[] + slash
+        result += part + slash
       if not ensure_final_sep:
         result = result[: -1]
       return result

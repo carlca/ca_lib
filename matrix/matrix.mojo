@@ -39,7 +39,7 @@ struct Matrix:
     # Check if all rows in `content` have the same number of columns
     try:
       for row in rows:
-        var this_count = su.count_char(row[], ",")
+        var this_count = su.count_char(row, ",")
         if this_count != last_count and last_count != 0:
           print("Error: Matrix dimensions of `content` must match")
         else:
@@ -51,9 +51,9 @@ struct Matrix:
           self.data = DataType.alloc(self.total_items)
           var i = 0
           for row in rows:
-            var cols = su.split(row[], ",")
+            var cols = su.split(row, ",")
             for col in cols:
-              var f = fu.str_to_float(col[])
+              var f = fu.str_to_float(col)
               DataType.store(self.data, i, f)
               i += 1
     except:
