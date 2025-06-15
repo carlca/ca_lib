@@ -1,5 +1,5 @@
-@value
-struct fu:
+@fieldwise_init
+struct fu(Copyable, Movable):
 
    @staticmethod
    fn str_to_float(s: String) raises -> Float64:

@@ -5,20 +5,20 @@ from builtin._location import __source_location
 
 alias TestFn = fn() raises -> Tuple[Bool, String]
 
-@value
-struct Passed(Stringable):
+@fieldwise_init
+struct Passed(Stringable, Copyable, Movable):
    var name: String
    fn __str__(self) -> String:
       return "\"" + self.name + "\": passed!"
 
-@value
-struct Failed(Stringable):
+@fieldwise_init
+struct Failed(Stringable, Copyable, Movable):
    var name: String
    fn __str__(self) -> String:
       return "\"" + self.name + "\": failed!"
 
-@value
-struct Raised(Stringable):
+@fieldwise_init
+struct Raised(Stringable, Copyable, Movable):
    var message: String
    fn __str__(self) -> String:
       var message = self.message
@@ -28,8 +28,8 @@ struct Raised(Stringable):
 
 alias TestResult = Variant[Passed, Failed, Raised]
 
-@value
-struct TeeTest:
+@fieldwise_init
+struct TeeTest(Copyable, Movable):
    var tests: List[TestFn]
 
    fn __init__(out self, *tests: TestFn):

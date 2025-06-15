@@ -1,8 +1,8 @@
 import sys
 from ca_lib.string_utils import su
 
-@value
-struct sysutils:
+@fieldwise_init
+struct sysutils(Copyable, Movable):
 
    @staticmethod
    fn get_full_app_name() -> String:

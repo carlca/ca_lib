@@ -1,7 +1,7 @@
 from collections import List
 
-@value
-struct su:
+@fieldwise_init
+struct su(Copyable, Movable):
 
    @staticmethod
    fn __string__mul__(input_string: String, n: Int) -> String:
