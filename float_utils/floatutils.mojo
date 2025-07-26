@@ -3,7 +3,6 @@ struct fu(Copyable, Movable):
 
    @staticmethod
    fn str_to_float(s: String) raises -> Float64:
-
       try:
          # locate decimal point
          var dot_pos = s.find(".")
@@ -20,7 +19,6 @@ struct fu(Copyable, Movable):
          var denominator = atol("1" + denom_str)
          # school-level maths here :)
          var frac = numerator / denominator
-
          # return the number as a Float64
          var result: Float64 = atol(int_str) + frac
          return result
@@ -45,7 +43,7 @@ struct fu(Copyable, Movable):
       var last_digit = i_str_full[len(i_str_full)-1]
       # grab the last but one digit in the integer string
       var prev_digit_pos = len(i_str_full) - 1
-      var prev_digit = i_str_full[prev_digit_pos - 1]
+      var prev_digit = String(i_str_full[prev_digit_pos - 1])
       # if last digit is >= to 5 then we...
       if ord(last_digit) >= ord("5"):
          # ... increment it by 1
