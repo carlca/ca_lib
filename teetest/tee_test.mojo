@@ -95,4 +95,4 @@ struct TeeTest(Copyable, Movable):
    @staticmethod
    fn unpack_loc(loc: String) raises -> Tuple[String, Int, Int, String]:
       var parts = loc.split(":")
-      return (parts[0][1:], parts[1].__int__(), parts[2][:-1].__int__(), parts[3])
+      return (String(parts[0][1:]), parts[1].__int__(), parts[2][:-1].__int__(), String(parts[3]))
