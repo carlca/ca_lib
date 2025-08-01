@@ -64,7 +64,6 @@ struct TeeTest(Copyable, Movable):
          return String(self[Raised])
 
    fn run_tests(self, failed_only: Bool = True) raises:
-      print("running from /Users/carlcaulkett/Code/Mojo/ca_lib!")
       var succ_count = 0
       var fail_count = 0
       for i in range(self.count()):
