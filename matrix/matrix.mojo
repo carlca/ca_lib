@@ -6,8 +6,9 @@ from ..float_utils import fu
 
 alias DataType = UnsafePointer[Scalar[DType.float64]]
 
-struct Matrix:
+struct Matrix(Copyable):
    '''Simple 2d matrix that uses Float64.'''
+   alias __copyinit__is_trivial = False
 
    var rows: Int
    var cols: Int
@@ -81,7 +82,7 @@ struct Matrix:
          return
       DataType.store(self.data, index, value)
 
-   fn __del__(owned self) -> None:
+   fn __del__(deinit self) -> None:
       self.data.free()
 
    fn __len__(read self) -> Int:
